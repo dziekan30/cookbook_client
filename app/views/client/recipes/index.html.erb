@@ -1,0 +1,26 @@
+<h1>All Recipes</h1>
+
+<div class="row">
+  <%= @recipes.each do |recipe| %>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= recipe["title"] %></h5>
+        <p class="card-text">Ingrediens <%= recipe["ingredients"] %></p>
+        <p class="card-text">Directions <%= recipe["directions"] %></p>
+        <a href="/client/recipe/<%= recipe["id"] %>" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<% @recipes.each do |recipe| %>
+  <h2><a href="/client/recipes/<%= recipe["id"] %>"><%= recipe["title"] %></a></h2>
+  <h3><%= recipe["chef"] %></h3>
+  <h4><%= recipe["ingredients"] %></h4>
+  <h4><%= recipe["directions"] %></h4>
+  <br>
+
+ <% end %>
+
